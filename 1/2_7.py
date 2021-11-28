@@ -1,19 +1,19 @@
-import numpy as numpy
-import matplotlib.pyplot as ppl
+import numpy as np
+import matplotlib.pyplot as plt
 
-rslts = []
+results = []
 size = 500
-fgr, grph = ppl.subplots()
-for i in range(1, 10):
-    pts = numpy.random.random(size=(size, i))
+r = range(1, 30)
+for i in r:
     count = 0
-    for j in pts:
-        if sum([k**2 for k in j]) <= 1:
+    points = np.random.random(size=(size, i))
+    for p in points:
+        if 1 >= sum([x**2 for x in p]):
             count += 1
-    rslts.append(count/size)
+    results.append(count/size)
+fig, ax = plt.subplots(figsize=(10, 6))
+ax.set_ylim(0, 0.85)
+ax.set_xlim(r[0], len(r))
+ax.plot(r, results, 100)
 
-grph.set_xlim(2,10)
-grph.set_ylim(0,1)
-grph.plot(range(1, 10), rslts)
-
-ppl.show()
+plt.show()
