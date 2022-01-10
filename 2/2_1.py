@@ -13,7 +13,7 @@ data_set.replace('', np.nan, inplace=True)
 data_set.dropna(inplace=True)
 
 train_val_set, test_set = train_test_split(data_set, test_size = 50)
-train_set, davis_val = train_test_split(train_val_set, test_size = 0.7)
+train_set, val_set = train_test_split(train_val_set, test_size = 0.3)
 
 data_set = data_set.loc[data_set['height'] > 140]
 
